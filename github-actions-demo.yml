@@ -1,1 +1,18 @@
-
+Название: Демонстрация GitHub Actions
+run-name: ${{ github.actor }} тестирует GitHub Actions 🚀
+включено: [нажать]
+вакансии:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    шаги:
+      - run: echo "🎉 Задание было автоматически запущено событием ${{ github.event_name }}."
+      - run: echo "🐧 Эта задача выполняется на сервере ${{ runner.os }}, размещенном на GitHub!"
+      - run: echo "🔎 Название вашей ветки — ${{ github.ref }}, а вашего репозитория — ${{ github.repository }}."
+      - имя: Проверить код репозитория
+        используется: actions/checkout@v5
+      - run: echo "💡 Репозиторий ${{ github.repository }} клонирован в исполняемый файл."
+      - run: echo "🖥️ Рабочий процесс готов к тестированию вашего кода на исполнителе."
+      - name: Список файлов в репозитории
+        выполнить: |
+          ls ${{ github.workspace }}
+      - выполнить: echo "🍏 Статус этой задачи: ${{ job.status }}."
